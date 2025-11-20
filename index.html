@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tandoor Tales - A Journey Through Indian Flavors</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+</head>
+<body>
+
+    <header class="hero-section">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="navbar" id="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="hero-content">
+        <h1 class="site-title">Tandoor Tales</h1>
+        <p class="site-tagline">A Journey Through Indian Flavors</p>
+      </div>
+    </header>
+
+
+    <main>
+        <section id="about" class="section-padding chef-section">
+            <div class="chef-image-container">
+                <img src="chef-placeholder.jpg" alt="Chef Kumar smiling" class="chef-photo">
+            </div>
+            <div class="chef-details">
+                <h2 class="section-heading">MEET THE CHEF</h2>
+                <p>Chef Kumar brings over **20 years of experience** in Indian cuisine, specializing in traditional tandoori dishes. His passion for authentic regional flavors is the heart of Tandoor Tales.</p>
+            </div>
+        </section>
+            <hr>
+        <section id="menu" class="food-grid-section">
+            <div class="food-grid">
+                <div class="food-item">
+                    <img src="tandoori-chicken-placeholder.jpg" alt="Tandoori Chicken" class="dish-photo">
+                    <p class="dish-name">TANDOORI CHICKEN</p>
+                </div>
+                <div class="food-item">
+                    <img src="butter-chicken-placeholder.jpg" alt="Butter Chicken" class="dish-photo">
+                    <p class="dish-name">BUTTER CHICKEN</p>
+                </div>
+                <div class="food-item wide-item">
+                    <img src="samosas-placeholder.jpg" alt="Vegetable Samosas" class="dish-photo">
+                    <p class="dish-name">VEGETABLE SAMOSAS</p>
+                </div>
+                <div class="food-item">
+                    <img src="dal-placeholder.jpg" alt="Dal" class="dish-photo">
+                    <p class="dish-name">DAL</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-padding contact-booking-section">
+            <div class="booking-form-container">
+                <h2 class="section-heading">BOOK A TABLE</h2>
+                <form>
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="tel" name="phone" placeholder="Phone" required>
+                    <input type="date" name="date" required>
+                    <input type="time" name="time" required>
+                    <select name="guests" required>
+                        <option value="">Number of Guests</option>
+                        <option value="1">1 Person</option>
+                        <option value="2">2 People</option>
+                        <option value="4">4 People</option>
+                        <option value="6">6 People</option>
+                        <option value="8+">8+ People</option>
+                    </select>
+                    <button type="submit" class="submit-button">Reserve Now</button>
+                </form>
+            </div>
+            
+            <div class="contact-details">
+                <h2 class="section-heading">CONTACT US</h2>
+                <p><strong>Address:</strong> 123 Spice Lane, Culinary City, TT 54321</p>
+                <p><strong>Phone:</strong> (555) 555-TALE</p>
+                <p><strong>Email:</strong> reservations@tandoortales.com</p>
+                <p><strong>Hours:</strong></p>
+                <ul>
+                    <li>Mon - Thu: 5:00 PM - 10:00 PM</li>
+                    <li>Fri - Sat: 5:00 PM - 11:00 PM</li>
+                    <li>Sunday: Closed</li>
+                </ul>
+              <div class="social-links">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Tandoor Tales. All Rights Reserved. | Designed with Warmth</p>
+    </footer>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hamburger = document.getElementById("hamburger");
+      const navbar = document.getElementById("navbar");
+      const navLinks = navbar.querySelectorAll("a"); // grab all nav links
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+
+        if (navbar.classList.contains("active")) {
+          navbar.classList.remove("active");
+          navbar.style.display = "none";
+        } else {
+          navbar.classList.add("active");
+          navbar.style.display = "flex";
+        }
+      });
+
+      // 👇 close menu when clicking any nav link
+      navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navbar.classList.remove("active");
+          navbar.style.display = "none";
+        });
+      });
+    });
+    </script>
+
+
+
+</body>
+</html>
