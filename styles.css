@@ -20,6 +20,11 @@ body {
     background-color: var(--background-color-warm);
     line-height: 1.6;
 }
+html {
+    scroll-behavior: smooth; /* smooth scrolling */
+    scroll-padding-top: 70px; /* height of fixed header */
+}
+
 
 .section-heading {
     font-family: 'Playfair Display', serif;
@@ -374,3 +379,4 @@ form input, form select {
         width: 100%;
     }
 }
+
