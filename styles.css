@@ -1,4 +1,6 @@
-/* Base Styles & Fonts */
+/* =========================
+   Base Styles & Fonts
+========================= */
 :root {
     --primary-color: #793D0F; /* Deep Brown/Rust for text */
     --accent-color: #B86F28; /* Saffron/Orange for warmth */
@@ -23,9 +25,12 @@ body {
 
 html {
     scroll-behavior: smooth; /* smooth scrolling */
-    scroll-padding-top: 70px; /* prevent content under navbar */
+    scroll-padding-top: 70px; /* height of fixed header */
 }
 
+/* =========================
+   Section Headings
+========================= */
 .section-heading {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
@@ -35,17 +40,17 @@ html {
     letter-spacing: 2px;
 }
 
-/* 1. Hero Section (Header) */
+/* =========================
+   Hero Section (Header)
+========================= */
 .hero-section {
     position: relative;
-    height: 100vh;
+    height: 100vh; /* full viewport */
     background: url('hero-background-interior.jpg') no-repeat center center/cover;
-    text-align: center;
-    color: var(--text-color-light);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding-top: 20px;
+    text-align: center;
+    color: var(--text-color-light);
 }
 
 .hero-section::before {
@@ -65,6 +70,7 @@ html {
     justify-content: center;
     gap: 40px;
     position: relative;
+    margin-top: 20px; /* top spacing */
 }
 
 .navbar a {
@@ -82,7 +88,7 @@ html {
 
 .hero-content {
     z-index: 2;
-    margin-bottom: 150px; /* Center content */
+    margin: auto 0; /* center vertically */
 }
 
 .site-title {
@@ -100,7 +106,9 @@ html {
     letter-spacing: 4px;
 }
 
-/* 2. Chef Section */
+/* =========================
+   Chef Section
+========================= */
 .section-padding {
     padding: 80px 10%;
 }
@@ -131,7 +139,9 @@ hr {
     border: 1px solid #ddd;
 }
 
-/* 3. Food Grid */
+/* =========================
+   Food Grid Section
+========================= */
 .food-grid-section {
     padding: 0 10%;
     margin-top: 30px;
@@ -169,7 +179,9 @@ hr {
     letter-spacing: 1px;
 }
 
-/* 4. Contact & Booking Section */
+/* =========================
+   Contact & Booking Section
+========================= */
 .contact-booking-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -177,7 +189,8 @@ hr {
     background-color: #fff;
 }
 
-.booking-form-container, .contact-details {
+.booking-form-container,
+.contact-details {
     padding: 20px;
 }
 
@@ -185,7 +198,8 @@ hr {
     color: var(--accent-color);
 }
 
-form input, form select {
+form input,
+form select {
     width: 100%;
     padding: 15px;
     margin-bottom: 15px;
@@ -211,7 +225,8 @@ form input, form select {
     background-color: var(--accent-color);
 }
 
-.contact-details p, .contact-details ul {
+.contact-details p,
+.contact-details ul {
     margin-bottom: 15px;
 }
 
@@ -221,24 +236,26 @@ form input, form select {
 }
 
 .social-links {
-  display: flex;
-  gap: 30px;
-  margin-top: 20px;
-  align-items: center;
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    align-items: center;
 }
 
 .social-links a {
-  color: #e45f0c;
-  font-size: 22px;
-  transition: all 0.3s ease;
+    color: #e45f0c;
+    font-size: 22px;
+    transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-  color: #ffb860;
-  transform: scale(1.1);
+    color: #ffb860;
+    transform: scale(1.1);
 }
 
-/* 5. Footer */
+/* =========================
+   Footer
+========================= */
 .site-footer {
     background-color: var(--primary-color);
     color: var(--text-color-light);
@@ -248,7 +265,9 @@ form input, form select {
     letter-spacing: 1px;
 }
 
-/* --- Hamburger Menu --- */
+/* =========================
+   Hamburger Menu
+========================= */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -283,7 +302,9 @@ form input, form select {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* --- Responsive Layout --- */
+/* =========================
+   Responsive Layout
+========================= */
 @media (max-width: 992px) {
     .chef-section {
         grid-template-columns: 1fr;
@@ -317,7 +338,7 @@ form input, form select {
     }
 
     .hero-content {
-        margin-top: 85%;
+        margin: auto 0;
     }
 
     .navbar {
@@ -325,7 +346,7 @@ form input, form select {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: #793d0fdb;        
+        background-color: #793d0fdb;
         position: fixed;
         top: 0;
         right: 0;
@@ -333,7 +354,7 @@ form input, form select {
         height: 100vh;
         padding: 40px 0;
         text-align: center;
-        z-index: 9; 
+        z-index: 9;
     }
 
     .navbar.active {
@@ -345,13 +366,21 @@ form input, form select {
         font-size: 1.2rem;
         color: var(--text-color-light);
     }
+
     .hamburger {
         display: flex;
     }
 
     @keyframes fadeDown {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }
 
@@ -370,28 +399,5 @@ form input, form select {
 
     .submit-button {
         width: 100%;
-    }
-}
-
-/* --- Desktop Fixes --- */
-@media (min-width: 769px) {
-    .hero-section {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .navbar {
-        display: flex !important;
-        position: relative;
-        z-index: 99;
-        margin-bottom: auto;
-    }
-
-    .hero-content {
-        margin-bottom: 0;
-        z-index: 2;
-        text-align: center;
     }
 }
