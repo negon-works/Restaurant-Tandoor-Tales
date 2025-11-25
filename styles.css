@@ -20,11 +20,11 @@ body {
     background-color: var(--background-color-warm);
     line-height: 1.6;
 }
+
 html {
     scroll-behavior: smooth; /* smooth scrolling */
-    scroll-padding-top: 70px; /* height of fixed header */
+    scroll-padding-top: 70px; /* prevent content under navbar */
 }
-
 
 .section-heading {
     font-family: 'Playfair Display', serif;
@@ -38,7 +38,7 @@ html {
 /* 1. Hero Section (Header) */
 .hero-section {
     position: relative;
-    height: 100vh; /* Adjust height as needed */
+    height: 100vh;
     background: url('hero-background-interior.jpg') no-repeat center center/cover;
     text-align: center;
     color: var(--text-color-light);
@@ -55,7 +55,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--hero-overlay); /* Dark overlay */
+    background-color: var(--hero-overlay);
     z-index: 1;
 }
 
@@ -107,7 +107,7 @@ html {
 
 .chef-section {
     display: grid;
-    grid-template-columns: 1fr 1.5fr; /* Matches the layout in the image */
+    grid-template-columns: 1fr 1.5fr;
     gap: 50px;
     align-items: center;
 }
@@ -127,9 +127,10 @@ html {
     font-size: 1.1rem;
 }
 
-hr{
+hr {
     border: 1px solid #ddd;
 }
+
 /* 3. Food Grid */
 .food-grid-section {
     padding: 0 10%;
@@ -138,8 +139,7 @@ hr{
 
 .food-grid {
     display: grid;
-    /* Grid structure from the image: 2 small, 1 wide, 1 small */
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto;
     gap: 30px;
     padding-bottom: 80px;
@@ -155,12 +155,11 @@ hr{
     display: block;
     object-fit: cover;
     margin-bottom: 10px;
-    transition: transform 0.4s ease-in-out; /* For the subtle zoom-in animation */
+    transition: transform 0.4s ease-in-out;
 }
 
-/* Subtle Zoom-in Animation */
 .dish-photo:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .dish-name {
@@ -175,7 +174,7 @@ hr{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    background-color: #fff; /* Slightly different background for visual break */
+    background-color: #fff;
 }
 
 .booking-form-container, .contact-details {
@@ -224,7 +223,6 @@ form input, form select {
 .social-links {
   display: flex;
   gap: 30px;
-  justify-content: padding-left;
   margin-top: 20px;
   align-items: center;
 }
@@ -236,10 +234,9 @@ form input, form select {
 }
 
 .social-links a:hover {
-  color: #ffb860; /* warm highlight tone */
+  color: #ffb860;
   transform: scale(1.1);
 }
-
 
 /* 5. Footer */
 .site-footer {
@@ -250,10 +247,6 @@ form input, form select {
     font-size: 0.9rem;
     letter-spacing: 1px;
 }
-
-
-
-/* --- Existing Styles Above Remain Same --- */
 
 /* --- Hamburger Menu --- */
 .hamburger {
@@ -280,7 +273,6 @@ form input, form select {
     transition: all 0.3s ease;
 }
 
-/* Active Hamburger Animation */
 .hamburger.active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -323,7 +315,8 @@ form input, form select {
     .site-tagline {
         font-size: 1rem;
     }
-    .hero-content{
+
+    .hero-content {
         margin-top: 85%;
     }
 
@@ -380,3 +373,25 @@ form input, form select {
     }
 }
 
+/* --- Desktop Fixes --- */
+@media (min-width: 769px) {
+    .hero-section {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .navbar {
+        display: flex !important;
+        position: relative;
+        z-index: 99;
+        margin-bottom: auto;
+    }
+
+    .hero-content {
+        margin-bottom: 0;
+        z-index: 2;
+        text-align: center;
+    }
+}
