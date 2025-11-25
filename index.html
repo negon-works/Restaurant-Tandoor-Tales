@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
 </head>
 <body>
 
@@ -31,7 +30,6 @@
       </div>
     </header>
 
-
     <main>
         <section id="about" class="section-padding chef-section">
             <div class="chef-image-container">
@@ -42,7 +40,7 @@
                 <p>Chef Kumar brings over **20 years of experience** in Indian cuisine, specializing in traditional tandoori dishes. His passion for authentic regional flavors is the heart of Tandoor Tales.</p>
             </div>
         </section>
-            <hr>
+        <hr>
         <section id="menu" class="food-grid-section">
             <div class="food-grid">
                 <div class="food-item">
@@ -96,13 +94,11 @@
                     <li>Fri - Sat: 5:00 PM - 11:00 PM</li>
                     <li>Sunday: Closed</li>
                 </ul>
-              <div class="social-links">
+                <div class="social-links">
                   <a href="#"><i class="fab fa-facebook-f"></i></a>
                   <a href="#"><i class="fab fa-instagram"></i></a>
                   <a href="#"><i class="fab fa-twitter"></i></a>
                 </div>
-
-
             </div>
         </section>
     </main>
@@ -110,38 +106,30 @@
     <footer class="site-footer">
         <p>&copy; 2025 Tandoor Tales. All Rights Reserved. | Designed with Warmth</p>
     </footer>
+
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const hamburger = document.getElementById("hamburger");
-      const navbar = document.getElementById("navbar");
-      const navLinks = navbar.querySelectorAll("a"); // grab all nav links
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger");
+        const navbar = document.getElementById("navbar");
+        const navLinks = navbar.querySelectorAll("a");
 
-      hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("active");
+          navbar.classList.toggle("active");
+          navbar.style.display = navbar.classList.contains("active") ? "flex" : "none";
+        });
 
-        if (navbar.classList.contains("active")) {
-          navbar.classList.remove("active");
-          navbar.style.display = "none";
-        } else {
-          navbar.classList.add("active");
-          navbar.style.display = "flex";
-        }
-      });
-
-      // 👇 close menu when clicking any nav link
-      navLinks.forEach(link => {
-        link.addEventListener("click", () => {
-          hamburger.classList.remove("active");
-          navbar.classList.remove("active");
-          navbar.style.display = "none";
+        // Only close menu on mobile
+        navLinks.forEach(link => {
+          link.addEventListener("click", () => {
+            if (window.innerWidth <= 768) {
+              hamburger.classList.remove("active");
+              navbar.classList.remove("active");
+              navbar.style.display = "none";
+            }
+          });
         });
       });
-    });
     </script>
-
-
-
 </body>
-
 </html>
-
